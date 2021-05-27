@@ -3,25 +3,23 @@ package com.techshard.graphql.service.root;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.techshard.graphql.service.BookService;
 import com.techshard.graphql.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class RootMutationResolver implements GraphQLMutationResolver {
 
-	private final BookService service;
-	private final UserService userService;
+	@Autowired
+	private BookService service;
 
-	public RootMutationResolver(BookService service, UserService userService) {
-		this.service = service;
-		this.userService = userService;
-	}
+	@Autowired
+	private UserService userService;
 
-
-	public BookService bookTest() {
+	public BookService book() {
 		return service;
 	}
 
-	public UserService userTest() {
+	public UserService user() {
 		return userService;
 	}
 }

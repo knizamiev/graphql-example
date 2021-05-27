@@ -24,10 +24,8 @@ public class BookService {
 		return bookDao.findBooks();
 	}
 
-	public String createBook()
-	{
+	public String createBook() {
 		return bookDao.createBook();
-
 	}
 
 }

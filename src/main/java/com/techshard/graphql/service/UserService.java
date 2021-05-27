@@ -1,7 +1,6 @@
 package com.techshard.graphql.service;
 
 import com.techshard.graphql.dao.UserDao;
-import com.techshard.graphql.model.Book;
 import com.techshard.graphql.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

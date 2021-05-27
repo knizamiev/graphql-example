@@ -9,6 +9,6 @@ type RootQuery {
 }
 
 type RootMutation {
-    bookTest: BookMutation
-    userTest: UserMutation
+    book: BookMutation
+    user: UserMutation
 }
