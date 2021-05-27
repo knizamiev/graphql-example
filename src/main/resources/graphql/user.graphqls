@@ -14,6 +14,6 @@ type UserQuery {
     getUsers: [UserType]
 }
 
-type UserMutation{
+type UserMutation {
     createUser: String
 }

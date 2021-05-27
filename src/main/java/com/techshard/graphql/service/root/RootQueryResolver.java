@@ -1,25 +1,24 @@
 package com.techshard.graphql.service.root;
 
-import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.techshard.graphql.service.BookService;
-import com.techshard.graphql.service.UserService;
+import com.techshard.graphql.service.BookQuery;
+import com.techshard.graphql.service.UserQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RootQueryResolver implements GraphQLQueryResolver{
+public class RootQueryResolver implements GraphQLQueryResolver {
 
 	@Autowired
-	private BookService service;
+	private BookQuery service;
 	@Autowired
-	private UserService userService;
+	private UserQuery userService;
 
-	public BookService book() {
+	public BookQuery book() {
 		return service;
 	}
 
-	public UserService user() {
+	public UserQuery user() {
 		return userService;
 	}
 
