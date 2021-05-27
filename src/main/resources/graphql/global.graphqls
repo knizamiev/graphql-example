@@ -5,10 +5,8 @@ schema {
 
 type RootQuery {
     book: BookQuery
-    user: UserQuery
 }
 
 type RootMutation {
     book: BookMutation
-    user: UserMutation
 }
