@@ -11,11 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BookService implements GraphQLQueryResolver, GraphQLMutationResolver {
+public class BookService {
 
 	@Autowired
 	private BookDao bookDao;
-
 
 	public Book getBook(){
 		return bookDao.findBook();
@@ -25,8 +24,10 @@ public class BookService implements GraphQLQueryResolver, GraphQLMutationResolve
 		return bookDao.findBooks();
 	}
 
-	public String createBook(Book book){
-		return "Complete";
+	public String createBook()
+	{
+		return bookDao.createBook();
+
 	}
 
 }

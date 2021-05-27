@@ -1,0 +1,14 @@
+schema {
+    query: RootQuery
+    mutation: RootMutation
+}
+
+type RootQuery {
+    book: BookQuery
+    user: UserQuery
+}
+
+type RootMutation {
+    bookTest: BookMutation
+    userTest: UserMutation
+}

@@ -21,4 +21,8 @@ public class BookDao {
 		rs.add(new Book(3,"Test book 3"));
 		return rs;
 	}
+
+	public String createBook(){
+		return "Hello";
+	}
 }
