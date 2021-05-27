@@ -1,30 +1,42 @@
+
+#type MutationRoot {
+#	book: BookMutation
+#}
+
+
+#type BookMutation {
+#	createBook(input: BookInput) : String
+#}
+
+#type Query{
+#	getBook: Book
+#	getBooks: [Book]
+#}
+#
+#type Mutation{
+#	createBook(input: BookInput) : String
+#}
+
+
 schema {
-	query: QueryTest
-	mutation: Mutation
+	query: RootQuery
 }
 
-type QueryTest {
-	vehicleQuery: VehicleQuery
+type RootQuery {
+	book: BookQuery
 }
 
-type VehicleQuery{
-	vehicles(count: Int):[Vehicle]
-	vehicle(id: ID):Vehicle
+type BookQuery {
+	getBook: BookType
+	getBooks: [BookType]
 }
 
-type Vehicle {
-	id: ID!,
-	type: String,
-	modelCode: String,
-	brandName: String,
-	launchDate: String
+input BookInput{
+	id: Int
+	name: String
 }
 
-type Query {
-	vehicles(count: Int):[Vehicle]
-	vehicle(id: ID):Vehicle
-}
-
-type Mutation {
-	createVehicle(type: String!, modelCode: String!, brandName: String, launchDate: String):Vehicle
+type BookType {
+	id: Int
+	name: String
 }
