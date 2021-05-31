@@ -4,9 +4,9 @@ schema {
 }
 
 type RootQuery {
-    book: BookQuery
+    user: Query
 }
 
 type RootMutation {
-    book: BookMutation
+    user: Mutation
 }

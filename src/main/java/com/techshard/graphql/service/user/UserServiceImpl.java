@@ -1,31 +1,28 @@
-package com.techshard.graphql.service;
+package com.techshard.graphql.service.user;
 
-
-import com.techshard.graphql.dao.UserDao;
+import com.techshard.graphql.dao.UserDAO;
 import com.techshard.graphql.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Component
-public class UserService {
+public class UserServiceImpl implements UserService{
 
 	@Autowired
-	private UserDao userDao;
+	private UserDAO userDAO;
 
 	public User getUser(){
-		return userDao.findUser();
+		return userDAO.findUser();
 	}
 
 	public List<User> getUsers(){
-		return userDao.findUsers();
+		return userDAO.findUsers();
 	}
 
 	public String createUser(){
-		return userDao.createUser();
+		return userDAO.createUser();
 	}
-
 
 }

@@ -1,0 +1,19 @@
+type UserType {
+    id: Int
+    name: String
+    working: Boolean
+}
+input UserInput {
+    id: Int
+    name: String
+    working: Boolean
+}
+
+type Query {
+    getUser(id: Int): UserType
+    getUsers: [UserType]
+}
+
+type Mutation {
+    createUser(input: UserInput): String
+}

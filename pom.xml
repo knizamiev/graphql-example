@@ -55,14 +55,51 @@
             <version>1.18.8</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>com.graphql-java-generator</groupId>
+            <artifactId>graphql-java-server-dependencies</artifactId>
+            <version>1.15</version>
+            <type>pom</type>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+
+
+
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>io.github.kobylynskyi</groupId>
+                <artifactId>graphql-codegen-maven-plugin</artifactId>
+                <version>5.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <graphqlSchemas>
+                                <excludedFiles>graphql/global.graphqls</excludedFiles>
+                            </graphqlSchemas>
+<!--                            <graphqlSchemaPaths>-->
+<!--                                <graphqlSchemaPath>${project.basedir}/src/main/resources//graphql/user.graphqls</graphqlSchemaPath>-->
+<!--                                <graphqlSchemaPath>${project.basedir}/src/main/resources/graphql/global.graphqls</graphqlSchemaPath>-->
+<!--                            </graphqlSchemaPaths>-->
+                            <outputDir>${project.build.directory}/generated-sources/graphql</outputDir>
+                            <apiPackageName>io.github.kobylynskyi.product.graphql.api</apiPackageName>
+                            <modelPackageName>io.github.kobylynskyi.product.graphql.model</modelPackageName>
+                            <modelNameSuffix>DTO</modelNameSuffix>
+
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
+
+
+
         </plugins>
     </build>
+
+
+
 </project>
